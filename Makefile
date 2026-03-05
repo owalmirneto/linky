@@ -36,3 +36,21 @@ erb-lint:
 
 erb-lint-fix:
 	bin/erb_lint app --autocorrect
+
+kamal-setup-production:
+	bin/kamal setup --verbose --destination=production
+
+deploy-production:
+	bin/kamal deploy --destination=production
+
+release-production-lock:
+	bin/kamal lock release --verbose --destination=production
+
+logs-production:
+	bin/kamal app logs --verbose --destination=production
+
+console-production:
+	bin/kamal console --verbose --destination=production
+
+migrate-production:
+	bin/kamal migrate --verbose --destination=production
