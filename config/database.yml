@@ -92,9 +92,11 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: linky_production
-    username: linky
-    password: <%= ENV["LINKY_DATABASE_PASSWORD"] %>
+    host: <%= ENV["POSTGRES_HOST"] %>
+    port: <%= ENV["POSTGRES_PORT"] %>
+    username: <%= ENV["POSTGRES_USER"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
+    database: <%= ENV["POSTGRES_DB"] %>
   cache:
     <<: *primary_production
     database: linky_production_cache
